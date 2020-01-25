@@ -1,0 +1,39 @@
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+using namespace std;
+
+main(){
+	int n, a, b, i, j;
+	char kal[100], kar[100];
+	printf("masukan kalimat = ");
+	gets(kal);
+	n=strlen(kal);
+	b=0;
+	for(i=0;i<n;i++){
+		a=1;
+		for(j=0;j<=n;j++){
+			if(j==i){
+				a=a;
+			}
+			else{
+				if(kal[i]==kal[j]){
+					a++;
+					b=1;
+				}
+				else{
+					a=a;
+				}
+			}
+		}
+		if(a>1){
+			printf("%c: %d\n",kal[i],a);	
+		}
+
+	}
+	if(b==0){
+			printf("tidak ada perulangan huruf dalam kalimat tersebut");
+		}
+	
+	getch();
+}

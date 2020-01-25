@@ -1,0 +1,22 @@
+#include<conio.h>
+#include<stdio.h>
+#include<windows.h>
+#include<string.h>
+using namespace std;
+
+main ()
+{
+	int i, j, x, y, m, n, z;
+	
+	printf("Masukan banyak jabat tangan = ");
+	scanf("%d",&n);
+	x=0;
+	for(i=1;i<n;i++){
+		for(j=i;j<n;j++){
+			x=x+1;
+		}
+	}
+	
+	printf("%d",x);
+	getch();
+}

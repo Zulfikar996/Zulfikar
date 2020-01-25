@@ -1,0 +1,36 @@
+<?php 
+
+function biodata($a, $b){
+$hobby=[
+	"gaming",
+	"swimming",
+	"coding"
+];
+$kalhob = implode(", ", $hobby);
+$maried = false;
+$school = [
+	"Universitas Brawijaya",
+	2015,
+	2019
+];
+$kalsco = implode(", ", $school);
+$skill = [
+	"PHP - beginer",
+	"C++ - Beginer",
+	"Matlab - Intermediet"
+];
+$kskill = implode(", ", $skill);
+$interest = true;
+	return "$a
+	<br>$b
+	<br>jl.jend.sudirman G 114, Cimahi, Jawa Barat
+	<br>$kalhob
+	<br>$maried
+	<br>$kalsco
+	<br>$kskill
+	<br>$interest";
+	
+};	
+
+echo biodata("Zulfikar Adi Wiguna ", 23);
+ ?>

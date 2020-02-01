@@ -1,5 +1,5 @@
 soal 1. hubungan JSON sebagai format untuk bertukar data client dan server atau antar aplikasi yang disebut REST API
 soal 2.
-soal 3. jalankan program lalu masukan jumlah orang yang datang lalu output banyaknya jabat tangan
-soal 4. jalankan program lalu masukan kalimat yang ingin dicari kesamaan hurufnya (kekurangan = kalimat yang sama masih tetap keluar juga dengan jumlah perulangan yang benar)
-soal 5. jalankan program lalu masukan jumlah data yang diinginkan, lalu masukan data satu per satu, lalu dikeluarkan hasil keuntungan yang paling tinggi
+soal 3. jalankan program menggunakan c++ (jika perlu instal program, instal dev c++) jalankan program lalu masukan kalimat/kata yang ingin di acak, lalu output kata yang teracak
+soal 4. 
+soal 5. 

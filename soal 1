@@ -1,0 +1,59 @@
+<?php 
+
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'api_db';
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if($conn->connect_error){
+	die('connection failed: '. $conn->connect_error);
+}
+
+$_GET['name']. '<br/>';
+$_GET['age']. '<br/>';
+
+$name = $_GET['name'];
+$age = $_GET['age'];
+
+$user_sql_query = 'SELECT * FROM categories WHERE name = "' . $name . '" AND age = "' . $age . '"';
+$result = $conn->query($user_sql_query);
+$return_object = $result->fetch_assoc();
+
+$hobby_sql_query = 'SELECT hobby FROM hobbies WHERE id_user = ' . $return_object['id'];
+	$result = $conn->query($hobby_sql_query);
+	$hobbies_array = array();
+	if($result->num_rows > 0){
+		while($hobby = $result->fetch_assoc()) {
+			array_push($hobbies_array, $hobby); 
+		}
+	}
+	$return_object['hobbies'] = $hobbies_array;
+
+$skills_sql_query = 'SELECT name, level FROM skills WHERE id_user = ' . $return_object['id'];
+	$result = $conn->query($skills_sql_query);
+	$return_object['skills'] = array();
+	if($result->num_rows > 0){
+		while($skill = $result->fetch_assoc()) {
+			array_push($return_object['skills'], $skill); 
+		}
+	}
+
+
+$schools_sql_query = 'SELECT school.name, user_school.year_in, user_school.year_out, user_school.major FROM user_school JOIN school ON school.id = user_school.id_school WHERE id_user= ' . $return_object['id'];
+	$result = $conn->query($schools_sql_query);
+	$return_object['schools'] = array();
+	if($result->num_rows > 0){
+		while($school = $result->fetch_assoc()) {
+			array_push($return_object['schools'], $school);
+		}
+	}
+
+echo json_encode($return_object);
+
+$conn->close();
+
+ ?>

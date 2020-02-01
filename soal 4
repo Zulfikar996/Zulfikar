@@ -1,0 +1,34 @@
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+#include<cstdlib>
+#include<ctype.h>
+using namespace std;
+
+int main ()
+{
+	char vokal []="aiueoAIUEO";
+	char kata [80];
+	int i, j, a=0;
+	printf ("Masukan kata atau kalimat : ");
+	gets (kata);
+	for (i=0;i<strlen (kata);i++) { 
+		for (j=0;j<10;j++) { 
+			if (kata [i] == vokal [j]) {
+				a=1; 
+				kata [i]= 'o';
+			}
+			else{
+				a=a;
+			}
+		}
+	}
+	if(a==1){
+		printf("output :%s", kata);
+	}
+	else{
+		printf("tidak ada huruf vokal!");
+	}
+	
+	getch ();
+}

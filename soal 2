@@ -1,0 +1,26 @@
+<?php 
+
+function checkUsername($username)
+{
+    $regex_username = '/^x[A-Z]{4,7}x$/';
+    if (preg_match($regex_username, $username)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function checkPassword($password)
+{
+    $regex_password = '/^([a-z0-9]|[A-Z]{3})+$/';
+    if (preg_match($regex_password, $password)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+echo checkUsername('xZULULx');
+echo checkPassword('BLAnket12');
+
+ ?>
